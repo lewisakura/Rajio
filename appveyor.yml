@@ -10,5 +10,5 @@ install:
   - ps: nuget restore
 
 after_build:
-  - ps: 7z a rajio.zip %APPVEYOR_BUILD_FOLDER%\Rajio\bin\Debug\*.*
+  - ps: 7z a rajio.zip $Env:APPVEYOR_BUILD_FOLDER\Rajio\bin\Debug\*.*
   - ps: Push-AppveyorArtifact rajio.zip
